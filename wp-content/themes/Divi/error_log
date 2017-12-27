@@ -1,0 +1,6 @@
+[21-Sep-2017 11:54:04 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home3/mauibeats/public_html/wp-content/themes/Divi/404.php on line 1
+[28-Sep-2017 07:30:29 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home3/mauibeats/public_html/wp-content/themes/Divi/404.php on line 1
+[30-Sep-2017 06:06:23 America/Chicago] PHP Fatal error:  Call to undefined function language_attributes() in /home3/mauibeats/public_html/wp-content/themes/Divi/header.php on line 3
+[16-Oct-2017 23:58:02 America/Chicago] PHP Fatal error:  Call to undefined function language_attributes() in /home3/mauibeats/public_html/wp-content/themes/Divi/header.php on line 3
+[18-Oct-2017 20:58:31 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home3/mauibeats/public_html/wp-content/themes/Divi/index.php on line 1
+[19-Oct-2017 12:15:58 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home3/mauibeats/public_html/wp-content/themes/Divi/404.php on line 1

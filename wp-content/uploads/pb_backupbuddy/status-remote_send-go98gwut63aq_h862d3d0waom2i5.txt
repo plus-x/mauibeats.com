@@ -1,0 +1,17 @@
+{"event":"details","time":1495031621,"u":"19","run":"0.23","mem":"33.25","data":"----- Initiating master send function for BackupBuddy v7.1.5.1 for basename file: `backup-mauibeats_com-2017_05_17-02_25pm-full-udqm6xwij2.zip`. Post-send deletion: 1"}
+{"event":"details","time":1495031621,"u":"19","run":"0.23","mem":"33.25","data":"Created fileoptions lock file `send-go98gwut63aq.txt.lock` with ID: 591cebe52f0876.58799171."}
+{"event":"details","time":1495031621,"u":"19","run":"0.23","mem":"33.25","data":"Fileoptions load using 0 MB of memory."}
+{"event":"details","time":1495031621,"u":"19","run":"0.23","mem":"33.26","data":"Fileoptions `send-go98gwut63aq.txt` saved. 1144 bytes written."}
+{"event":"details","time":1495031621,"u":"19","run":"0.23","mem":"33.25","data":"Initializing destination."}
+{"event":"details","time":1495031621,"u":"19","run":"0.23","mem":"33.25","data":"Loading destination init file `\/home3\/mauibeats\/public_html\/wp-content\/plugins\/backupbuddy\/destinations\/dropbox2\/init.php`."}
+{"event":"details","time":1495031621,"u":"19","run":"0.23","mem":"33.38","data":"Destination init loaded."}
+{"event":"details","time":1495031621,"u":"19","run":"0.23","mem":"33.45","data":"Initialized `dropbox2` destination."}
+{"event":"details","time":1495031621,"u":"19","run":"0.23","mem":"33.45","data":"Applying destination-specific defaults."}
+{"event":"details","time":1495031621,"u":"19","run":"0.23","mem":"33.45","data":"Applying global destination defaults."}
+{"event":"details","time":1495031621,"u":"19","run":"0.23","mem":"33.45","data":"Calling destination-specific send method."}
+{"event":"details","time":1495031621,"u":"19","run":"0.23","mem":"33.45","data":"Dropbox2 send function started. Remote send id: `go98gwut63aq`."}
+{"event":"details","time":1495031621,"u":"20","run":"0.24","mem":"33.75","data":"Connected to Dropbox."}
+{"event":"details","time":1495031621,"u":"20","run":"0.24","mem":"33.75","data":"Opening file `backup-mauibeats_com-2017_05_17-02_25pm-full-udqm6xwij2.zip` to send."}
+{"event":"details","time":1495031621,"u":"20","run":"0.24","mem":"33.75","data":"File exceeds chunking limit of `80` MB. Using chunked upload for this file transfer."}
+{"event":"details","time":1495031621,"u":"20","run":"0.24","mem":"33.75","data":"Reading first chunk into memory."}
+{"event":"details","time":1495031621,"u":"61","run":"0.65","mem":"113.76","data":"About to start chunked upload & put first chunk of file `backup-mauibeats_com-2017_05_17-02_25pm-full-udqm6xwij2.zip` to Dropbox (PHP 5.3+)."}

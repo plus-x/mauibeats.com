@@ -1,0 +1,39 @@
+{"event":"details","time":1472772145,"u":"15","run":"0.29","mem":"28.91","data":"----- Initiating master send function for BackupBuddy v7.1.5.1 for basename file: `backup-mauibeats_com-2016_09_01-11_21pm-full-jbzonk64uh.zip`. Post-send deletion: 1"}
+{"event":"details","time":1472772145,"u":"15","run":"0.29","mem":"28.91","data":"Created fileoptions lock file `send-5vij1bhj6i8m.txt.lock` with ID: 57c944d1263087.61003346."}
+{"event":"details","time":1472772145,"u":"15","run":"0.29","mem":"28.91","data":"Fileoptions load using 0 MB of memory."}
+{"event":"details","time":1472772145,"u":"15","run":"0.29","mem":"28.91","data":"Fileoptions `send-5vij1bhj6i8m.txt` saved. 1132 bytes written."}
+{"event":"details","time":1472772145,"u":"15","run":"0.29","mem":"28.91","data":"Initializing destination."}
+{"event":"details","time":1472772145,"u":"15","run":"0.29","mem":"28.91","data":"Loading destination init file `\/home3\/mauibeats\/public_html\/wp-content\/plugins\/backupbuddy\/destinations\/dropbox2\/init.php`."}
+{"event":"details","time":1472772145,"u":"16","run":"0.29","mem":"29.04","data":"Destination init loaded."}
+{"event":"details","time":1472772145,"u":"16","run":"0.30","mem":"29.11","data":"Initialized `dropbox2` destination."}
+{"event":"details","time":1472772145,"u":"16","run":"0.30","mem":"29.11","data":"Applying destination-specific defaults."}
+{"event":"details","time":1472772145,"u":"16","run":"0.30","mem":"29.11","data":"Applying global destination defaults."}
+{"event":"details","time":1472772145,"u":"16","run":"0.30","mem":"29.11","data":"Calling destination-specific send method."}
+{"event":"details","time":1472772145,"u":"16","run":"0.30","mem":"29.11","data":"Dropbox2 send function started. Remote send id: `5vij1bhj6i8m`."}
+{"event":"details","time":1472772145,"u":"16","run":"0.30","mem":"29.41","data":"Connected to Dropbox."}
+{"event":"details","time":1472772145,"u":"16","run":"0.30","mem":"29.41","data":"Opening file `backup-mauibeats_com-2016_09_01-11_21pm-full-jbzonk64uh.zip` to send."}
+{"event":"details","time":1472772145,"u":"16","run":"0.30","mem":"29.41","data":"Dropbox send not set to be chunked."}
+{"event":"details","time":1472772145,"u":"16","run":"0.30","mem":"29.41","data":"About to put file `backup-mauibeats_com-2016_09_01-11_21pm-full-jbzonk64uh.zip` (58.72 MB) to Dropbox (PHP 5.3+)."}
+{"event":"details","time":1472772180,"u":"60","run":"35.74","mem":"29.58","data":"About to load fileoptions data."}
+{"event":"details","time":1472772180,"u":"60","run":"35.74","mem":"29.58","data":"Fileoptions instance #14."}
+{"event":"details","time":1472772180,"u":"60","run":"35.74","mem":"29.58","data":"Created fileoptions lock file `send-5vij1bhj6i8m.txt.lock` with ID: 57c944f49477f7.27672014."}
+{"event":"details","time":1472772180,"u":"60","run":"35.74","mem":"29.58","data":"Fileoptions load using 0 MB of memory."}
+{"event":"details","time":1472772180,"u":"60","run":"35.74","mem":"29.58","data":"Fileoptions data loaded."}
+{"event":"details","time":1472772180,"u":"60","run":"35.74","mem":"29.58","data":"Dropbox (non-chunked) transfer stats - Sent: `58.72 MB`, Transfer duration: `35.4374690056`, Speed: `1.66 MB\/sec`."}
+{"event":"details","time":1472772180,"u":"61","run":"35.74","mem":"29.59","data":"Fileoptions `send-5vij1bhj6i8m.txt` saved. 1180 bytes written."}
+{"event":"message","time":1472772180,"u":"61","run":"35.74","mem":"29.58","data":"Success sending `backup-mauibeats_com-2016_09_01-11_21pm-full-jbzonk64uh.zip` to Dropbox!"}
+{"event":"details","time":1472772180,"u":"61","run":"35.75","mem":"29.58","data":"Dropbox file limit in place. Proceeding with enforcement."}
+{"event":"details","time":1472772181,"u":"96","run":"37.10","mem":"29.59","data":"All files sent."}
+{"event":"details","time":1472772181,"u":"96","run":"37.10","mem":"29.57","data":"Completed send function. Success."}
+{"event":"details","time":1472772181,"u":"96","run":"37.10","mem":"29.57","data":"About to load fileoptions data."}
+{"event":"details","time":1472772181,"u":"96","run":"37.10","mem":"29.57","data":"Fileoptions instance #16."}
+{"event":"details","time":1472772181,"u":"96","run":"37.10","mem":"29.57","data":"Created fileoptions lock file `send-5vij1bhj6i8m.txt.lock` with ID: 57c944f5eb6b95.53151580."}
+{"event":"details","time":1472772181,"u":"96","run":"37.10","mem":"29.58","data":"Fileoptions load using 0 MB of memory."}
+{"event":"details","time":1472772181,"u":"96","run":"37.10","mem":"29.58","data":"Fileoptions data loaded."}
+{"event":"details","time":1472772181,"u":"96","run":"37.10","mem":"29.58","data":"Post-send deletion enabled."}
+{"event":"details","time":1472772181,"u":"96","run":"37.10","mem":"29.58","data":"Performing post-send deletion since transfer succeeded."}
+{"event":"details","time":1472772181,"u":"96","run":"37.10","mem":"29.58","data":"Deleting local file `\/home3\/mauibeats\/public_html\/wp-content\/uploads\/backupbuddy_backups\/backup-mauibeats_com-2016_09_01-11_21pm-full-jbzonk64uh.zip`."}
+{"event":"details","time":1472772181,"u":"98","run":"37.12","mem":"29.58","data":"Deleted local file after successful remote destination send based on settings."}
+{"event":"archiveDeleted","time":1472772181,"u":"98","run":"37.12","mem":"29.58","data":""}
+{"event":"details","time":1472772181,"u":"98","run":"37.12","mem":"29.58","data":"Finished sending email NOT enabled. Skipping."}
+{"event":"details","time":1472772182,"u":"06","run":"37.19","mem":"29.57","data":"Ending send() function pass."}

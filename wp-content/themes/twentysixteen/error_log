@@ -1,0 +1,1 @@
+[05-Dec-2017 07:17:07 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home3/mauibeats/public_html/wp-content/themes/twentysixteen/404.php on line 10
