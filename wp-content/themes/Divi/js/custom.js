@@ -1,3 +1,4 @@
+/*! ET custom.js */
 (function($){
 	window.et_calculating_scroll_position = false;
 	window.et_side_nav_links_initialized  = false;
@@ -7,7 +8,7 @@
 		et_is_ipad = navigator.userAgent.match( /iPad/ ),
 		$et_container = $( '.container' ),
 		et_container_width = $et_container.width(),
-		et_is_fixed_nav = $( 'body' ).hasClass( 'et_fixed_nav' ),
+		et_is_fixed_nav = $( 'body' ).hasClass( 'et_fixed_nav' ) || $( 'body' ).hasClass( 'et_vertical_fixed' ),
 		et_is_vertical_fixed_nav = $( 'body' ).hasClass( 'et_vertical_fixed' ),
 		et_is_rtl = $( 'body' ).hasClass( 'rtl' ),
 		et_hide_nav = $( 'body' ).hasClass( 'et_hide_nav' ),
@@ -32,51 +33,27 @@
 		$et_pb_first_row = $( 'body.et_pb_pagebuilder_layout .et_pb_section:visible:first' ),
 		et_is_touch_device = 'ontouchstart' in window || navigator.maxTouchPoints;
 
+	// We need to check first to see if we are on a woocommerce single product.
+	if ( $("body").hasClass("woocommerce") && $("body").hasClass("single-product") && $(".woocommerce-product-gallery").length > 0 ) {
+		// get the gallery container.
+		var gal = $(".woocommerce-product-gallery")[0];
+
+		// let's replace the data attribute since Salvatorre reconfigures
+		// data-columns on the resize event.
+		var newstr = gal.outerHTML.replace( 'data-columns', 'data-cols' );
+
+		// finally we re-insert.
+		gal.outerHTML = newstr;
+	}
+
 	$(document).ready( function(){
-		var $et_top_menu = $( 'ul.nav' ),
+		var $et_top_menu = $( 'ul.nav, ul.menu' ),
 			$et_search_icon = $( '#et_search_icon' ),
 			et_parent_menu_longpress_limit = 300,
 			et_parent_menu_longpress_start,
 			et_parent_menu_click = true;
 
-		$et_top_menu.find( 'li' ).hover( function() {
-			if ( ! $(this).closest( 'li.mega-menu' ).length || $(this).hasClass( 'mega-menu' ) ) {
-				$(this).addClass( 'et-show-dropdown' );
-				$(this).removeClass( 'et-hover' ).addClass( 'et-hover' );
-			}
-		}, function() {
-			var $this_el = $(this);
-
-			$this_el.removeClass( 'et-show-dropdown' );
-
-			setTimeout( function() {
-				if ( ! $this_el.hasClass( 'et-show-dropdown' ) ) {
-					$this_el.removeClass( 'et-hover' );
-				}
-			}, 200 );
-		} );
-
-		// Dropdown menu adjustment for touch screen
-		$et_top_menu.find( '.menu-item-has-children > a' ).on( 'touchend', function(){
-			var $et_parent_menu = $( this ).parent( 'li' );
-			// open submenu on 1st tap
-			// open link on second tap
-			if ( $et_parent_menu.hasClass( 'et-hover' ) ) {
-				window.location = $( this ).attr( 'href' );
-			} else {
-				$et_parent_menu.trigger( 'mouseenter' );
-			}
-		} );
-
-		$et_top_menu.find( 'li.mega-menu' ).each(function(){
-			var $li_mega_menu           = $(this),
-				$li_mega_menu_item      = $li_mega_menu.children( 'ul' ).children( 'li' ),
-				li_mega_menu_item_count = $li_mega_menu_item.length;
-
-			if ( li_mega_menu_item_count < 4 ) {
-				$li_mega_menu.addClass( 'mega-menu-parent mega-menu-parent-' + li_mega_menu_item_count );
-			}
-		});
+		window.et_pb_init_nav_menu( $et_top_menu );
 
 		function et_header_menu_split(){
 			var $logo_container = $( '#main-header > .container > .logo_container' ),
@@ -85,7 +62,7 @@
 				et_top_navigation_li_break_index = Math.round( et_top_navigation_li_size / 2 ) - 1,
 				window_width = $et_window.prop('outerWidth') || $et_window.width();
 
-			if ( window_width > 980 && $logo_container.length ) {
+			if ( window_width > 980 && $logo_container.length && $('body').hasClass('et_header_style_split') ) {
 				$('<li class="centered-inline-logo-wrap"></li>').insertAfter($et_top_navigation.find('nav > ul >li:nth('+et_top_navigation_li_break_index+')') );
 				$logo_container.appendTo( $et_top_navigation.find('.centered-inline-logo-wrap') );
 			}
@@ -93,6 +70,17 @@
 			if ( window_width <= 980 && $logo_container_splitted.length ) {
 				$logo_container_splitted.prependTo('#main-header > .container');
 				$('#main-header .centered-inline-logo-wrap').remove();
+			}
+		}
+
+		function et_set_right_vertical_menu() {
+			var $body = $( 'body' );
+			if ( $body.hasClass( 'et_boxed_layout' ) && $body.hasClass( 'et_vertical_fixed' ) && $body.hasClass( 'et_vertical_right' ) ) {
+				var header_offset = parseFloat( $( '#page-container' ).css( 'margin-right' ) );
+				header_offset += ( parseFloat( $( '#et-main-area' ).css( 'margin-right' ) ) - 225 );
+				header_offset = 0 > header_offset ? 0 : header_offset;
+
+				$( '#main-header' ).addClass( 'et_vertical_menu_set' ).css( { 'left': '', 'right': header_offset } );
 			}
 		}
 
@@ -112,6 +100,7 @@
 			if ( $( '#main-header' ).height() < $( '#et-top-navigation' ).height() ) {
 				$( '#main-header' ).height( $( '#et-top-navigation' ).height() + $( '#logo' ).height() + 100 );
 			}
+			et_set_right_vertical_menu();
 		}
 
 		window.et_calculate_header_values = function() {
@@ -217,6 +206,10 @@
 		}
 
 		function et_page_load_scroll_to_anchor() {
+			if ( $( window.et_location_hash ).length === 0 ) {
+				return;
+			}
+
 			var $map_container = $( window.et_location_hash + ' .et_pb_map_container' ),
 				$map = $map_container.children( '.et_pb_map' ),
 				$target = $( window.et_location_hash );
@@ -754,6 +747,8 @@
 
 				$slide_menu_container.css( { 'padding-top': top_bar_height + 20 } );
 			}
+
+			et_set_right_vertical_menu();
 		} );
 
 		$( window ).ready( function(){
@@ -768,6 +763,13 @@
 			}
 
 			et_fix_page_container_position();
+
+			// Minified JS is ordered differently to avoid jquery-migrate to cause js error.
+			// This might cause hiccup on some specific configuration (ie. parallax of first module on transparent nav)
+			// Triggerring resize, in most case, re-calculate the UI correctly
+			if ( window.et_is_minified_js && window.et_is_transparent_nav && ! window.et_is_vertical_nav ){
+				$( window ).trigger( 'resize' );
+			}
 
 			if ( window.hasOwnProperty( 'et_location_hash' ) && '' !== window.et_location_hash ) {
 				// Handle the page scroll that we prevented earlier in the <head>
@@ -821,6 +823,13 @@
 						$waypoint_selector = $('#main-content');
 					}
 
+					// Disabled section/row/module can cause waypoint to trigger 'down' event during its setup even if
+					// no scrolling happened, which would result in 'et-fixed-header' class being prematurely added.
+					// Since this only happens when page is loaded, we add an extra check that is no longer needed
+					// as soon as waypoint initialization is finished.
+					var checkIfScrolled = true;
+					setTimeout(function() { checkIfScrolled = false; }, 0);
+
 					$waypoint_selector.waypoint( {
 						offset: function() {
 							if ( etRecalculateOffset ) {
@@ -848,6 +857,9 @@
 							et_fix_logo_transition();
 
 							if ( direction === 'down' ) {
+								if (checkIfScrolled && $et_window.scrollTop() === 0) {
+									return;
+								}
 								$main_header.addClass( 'et-fixed-header' );
 								$main_container_wrapper.addClass ( 'et-animated-content' );
 								$top_header.addClass( 'et-fixed-header' );
@@ -894,14 +906,22 @@
 			var $this_link = $( this ),
 				has_closest_smooth_scroll_disabled = $this_link.closest( '.et_smooth_scroll_disabled' ).length,
 				has_closest_woocommerce_tabs = ( $this_link.closest( '.woocommerce-tabs' ).length && $this_link.closest( '.tabs' ).length ),
+				has_closest_timetable_tab = $this_link.closest( '.tt_tabs_navigation' ).length,
 				has_closest_eab_cal_link = $this_link.closest( '.eab-shortcode_calendar-navigation-link' ).length,
+				has_closest_ee_cart_link = $this_link.closest( '.view-cart-lnk' ).length,
 				has_acomment_reply = $this_link.hasClass( 'acomment-reply' ),
-				disable_scroll = has_closest_smooth_scroll_disabled || has_closest_woocommerce_tabs || has_closest_eab_cal_link || has_acomment_reply;
+				is_woocommerce_review_link = $this_link.hasClass( 'woocommerce-review-link' ),
+				disable_scroll = has_closest_smooth_scroll_disabled || has_closest_ee_cart_link || has_closest_woocommerce_tabs || has_closest_eab_cal_link || has_acomment_reply || is_woocommerce_review_link || has_closest_timetable_tab;
 
 			if ( ( location.pathname.replace( /^\//,'' ) == this.pathname.replace( /^\//,'' ) && location.hostname == this.hostname ) && ! disable_scroll ) {
 				var target = $( this.hash );
 				target = target.length ? target : $( '[name=' + this.hash.slice(1) +']' );
 				if ( target.length ) {
+
+					// automatically close fullscreen menu if clicked from there
+					if ( $this_link.closest( '.et_pb_fullscreen_menu_opened' ).length > 0 ) {
+						et_pb_toggle_fullscreen_menu();
+					}
 
 					et_pb_smooth_scroll( target, false, 800 );
 
@@ -1320,6 +1340,10 @@
 	}
 
 	$( '#page-container' ).on( 'click', '.et_toggle_fullscreen_menu', function() {
+		et_pb_toggle_fullscreen_menu();
+	});
+
+	function et_pb_toggle_fullscreen_menu() {
 		var $menu_container = $( '.et_header_style_fullscreen .et_slide_in_menu_container' ),
 			top_bar_height = $menu_container.find( '.et_slide_menu_top' ).innerHeight();
 
@@ -1336,7 +1360,7 @@
 				$menu_container.removeClass( 'et_pb_fullscreen_menu_animated' );
 			}, 1000 );
 		}
-	});
+	}
 
 	$( window ).unload( function () {
 		/**

@@ -1,8 +1,9 @@
 <?php
+if (!defined('ABSPATH')) { exit(); } // No direct access
 
 // Enqueue user scripts
 function db121_enqueue_scripts() { 
-	wp_enqueue_style('db121_socicons', plugin_dir_url(__FILE__).'icons.css'); // Load socicons font (src: http://www.socicon.com/)
+	wp_enqueue_style('db121_socicons', plugin_dir_url(__FILE__).'icons.css', array(), BOOSTER_VERSION); // Load socicons font (src: http://www.socicon.com/)
 }
 add_action('wp_enqueue_scripts', 'db121_enqueue_scripts');
 
@@ -242,6 +243,7 @@ function db121_customize_register($wp_customize){
 }
 
 function db121_icon_js() {
+	$networks = db121_get_networks();
 	$option = get_option('wtfdivi');
 	if (empty($option['fixes']['126-customizer-social-icons']['icons'])) { return; }
 
@@ -260,10 +262,11 @@ function db121_icon_js() {
 			$url = (empty($scheme) && !empty($path))?"http://$url":$url; // add the scheme if missing
 		
 			if (divibooster_is_divi()) {
-				if (!empty($icon['id']) and $icon['id']!='custom') { 
-					?>$('.et-social-icons').append('<li class="et-social-icon"><a href="<?php esc_attr_e($url); ?>" class="icon socicon socicon-<?php esc_attr_e($icon['id']) ?>"></a></li>&nbsp;');<?php 
+				if (!empty($icon['id']) and $icon['id']!='custom') {
+					$span = isset($networks[$icon['id']])?'<span>'.esc_html($networks[$icon['id']]).'</span>':'';
+					?>$('.et-social-icons').append('<li class="et-social-icon"><a href="<?php esc_attr_e($url); ?>" class="icon socicon socicon-<?php esc_attr_e($icon['id']) ?>"><?php echo $span; ?></a></li>');<?php 
 				} else if ($icon['id']=='custom') { 
-					?>$('.et-social-icons').append('<li class="et-social-icon"><a href="<?php esc_attr_e($url); ?>" class="icon socicon socicon-custom"><img src="<?php esc_attr_e($icon['img']); ?>"></img></a></li>&nbsp;');<?php 
+					?>$('.et-social-icons').append('<li class="et-social-icon"><a href="<?php esc_attr_e($url); ?>" class="icon socicon socicon-custom"><img src="<?php esc_attr_e($icon['img']); ?>"></img></a></li>');<?php 
 				} 
 			} elseif (divibooster_is_extra()) {
 				if (!empty($icon['id']) and $icon['id']!='custom') { 
@@ -280,3 +283,23 @@ function db121_icon_js() {
 	} 
 }
 add_action('wp_head', 'db121_icon_js');
+
+// In customizer preview, replace the red circle on icon links with an alert box, so it doesn't look like there has been an error adding the link
+function db121_improve_customizer_warning() {
+	if (is_customize_preview()) {
+		?>
+		<style>
+		.et-social-icon > a.customize-unpreviewable { cursor: pointer !important; }
+		</style>
+		<script>
+		jQuery(function($){
+			/* Improve customizer link disabled notification */
+			$(document).on('click', '.et-social-icon > a.customize-unpreviewable', function(){ 
+				alert('External links are disabled in the customizer preview.'); 
+			});
+		});
+		</script>
+		<?php
+	}
+}
+add_action('wp_head', 'db121_improve_customizer_warning');

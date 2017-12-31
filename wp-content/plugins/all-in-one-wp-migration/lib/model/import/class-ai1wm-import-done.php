@@ -43,6 +43,19 @@ class Ai1wm_Import_Done {
 			if ( isset( $multisite['Plugins'] ) && ( $plugins = $multisite['Plugins'] ) ) {
 				ai1wm_activate_plugins( $plugins );
 			}
+
+			// Deactivate sitewide Really Simple SSL, WordPress HTTPS (SSL) and WP Force SSL plugins
+			if ( ! is_ssl() ) {
+				ai1wm_deactivate_plugins( array(
+					'really-simple-ssl/rlrsssl-really-simple-ssl.php',
+					'wordpress-https/wordpress-https.php',
+					'wp-force-ssl/wp-force-ssl.php',
+				) );
+			}
+
+			// Deactivate Jetpack Photon module
+			ai1wm_deactivate_jetpack_photon_module();
+
 		} else {
 			// Check package.json file
 			if ( true === is_file( ai1wm_package_path( $params ) ) ) {
@@ -72,8 +85,17 @@ class Ai1wm_Import_Done {
 					ai1wm_activate_stylesheet( $stylesheet );
 				}
 
-				// Disable Jetpack Photon module
-				ai1wm_disable_jetpack_photon();
+				// Deactivate Really Simple SSL, WordPress HTTPS (SSL) and WP Force SSL plugins
+				if ( ! is_ssl() ) {
+					ai1wm_deactivate_plugins( array(
+						'really-simple-ssl/rlrsssl-really-simple-ssl.php',
+						'wordpress-https/wordpress-https.php',
+						'wp-force-ssl/wp-force-ssl.php',
+					) );
+				}
+
+				// Deactivate Jetpack Photon module
+				ai1wm_deactivate_jetpack_photon_module();
 			}
 		}
 
@@ -107,8 +129,17 @@ class Ai1wm_Import_Done {
 					ai1wm_activate_stylesheet( $stylesheet );
 				}
 
-				// Disable Jetpack Photon module
-				ai1wm_disable_jetpack_photon();
+				// Deactivate Really Simple SSL, WordPress HTTPS (SSL) and WP Force SSL plugins
+				if ( ! is_ssl() ) {
+					ai1wm_deactivate_plugins( array(
+						'really-simple-ssl/rlrsssl-really-simple-ssl.php',
+						'wordpress-https/wordpress-https.php',
+						'wp-force-ssl/wp-force-ssl.php',
+					) );
+				}
+
+				// Deactivate Jetpack Photon module
+				ai1wm_deactivate_jetpack_photon_module();
 			}
 		}
 
@@ -124,7 +155,7 @@ class Ai1wm_Import_Done {
 				admin_url( 'options-permalink.php#submit' )
 			),
 			__(
-				'Your data has been imported successfuly!',
+				'Your data has been imported successfully!',
 				AI1WM_PLUGIN_NAME
 			)
 		);

@@ -298,3 +298,5 @@
 [11-Dec-2017 10:42:46 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 234881025 bytes) in /home3/mauibeats/public_html/wp-content/plugins/backupbuddy/classes/core.php on line 3350
 [19-Dec-2017 08:39:16 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home3/mauibeats/public_html/wp-content/plugins/backupbuddy/classes/core.php on line 3280
 [19-Dec-2017 08:48:45 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 234881025 bytes) in /home3/mauibeats/public_html/wp-content/plugins/backupbuddy/classes/core.php on line 3350
+[27-Dec-2017 09:06:07 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home3/mauibeats/public_html/wp-content/plugins/backupbuddy/classes/core.php on line 3280
+[27-Dec-2017 09:24:18 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 234881025 bytes) in /home3/mauibeats/public_html/wp-content/plugins/backupbuddy/classes/core.php on line 3350

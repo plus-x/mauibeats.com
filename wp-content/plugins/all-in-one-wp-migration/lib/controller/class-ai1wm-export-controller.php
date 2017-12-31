@@ -52,14 +52,13 @@ class Ai1wm_Export_Controller {
 		// Set secret key
 		$secret_key = null;
 		if ( isset( $params['secret_key'] ) ) {
-			$secret_key = $params['secret_key'];
+			$secret_key = trim( $params['secret_key'] );
 		}
 
 		try {
 			// Ensure that unauthorized people cannot access export action
 			ai1wm_verify_secret_key( $secret_key );
 		} catch ( Ai1wm_Not_Valid_Secret_Key_Exception $e ) {
-			Ai1wm_Log::error( $e->getMessage() );
 			exit;
 		}
 
@@ -87,6 +86,7 @@ class Ai1wm_Export_Controller {
 
 						} catch ( Exception $e ) {
 							Ai1wm_Status::error( $e->getMessage() );
+							Ai1wm_Directory::delete( ai1wm_storage_path( $params ) );
 							exit;
 						}
 					}
@@ -122,6 +122,7 @@ class Ai1wm_Export_Controller {
 			apply_filters( 'ai1wm_export_s3', Ai1wm_Template::get_content( 'export/button-s3' ) ),
 			apply_filters( 'ai1wm_export_onedrive', Ai1wm_Template::get_content( 'export/button-onedrive' ) ),
 			apply_filters( 'ai1wm_export_box', Ai1wm_Template::get_content( 'export/button-box' ) ),
+			apply_filters( 'ai1wm_export_mega', Ai1wm_Template::get_content( 'export/button-mega' ) ),
 		);
 	}
 }
