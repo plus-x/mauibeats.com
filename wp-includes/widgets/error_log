@@ -1,0 +1,3 @@
+[07-Feb-2018 02:58:52 America/Chicago] PHP Fatal error:  Class 'WP_Widget' not found in /home3/mauibeats/public_html/wp-includes/widgets/class-wp-widget-categories.php on line 17
+[07-Feb-2018 07:29:34 America/Chicago] PHP Fatal error:  Class 'WP_Widget' not found in /home3/mauibeats/public_html/wp-includes/widgets/class-wp-widget-pages.php on line 17
+[07-Feb-2018 07:29:34 America/Chicago] PHP Fatal error:  Class 'WP_Widget' not found in /home3/mauibeats/public_html/wp-includes/widgets/class-wp-widget-pages.php on line 17

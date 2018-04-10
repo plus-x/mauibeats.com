@@ -1,2 +1,5 @@
 [02-Oct-2016 15:13:32 America/Chicago] PHP Fatal error:  Call to undefined function do_action() in /home3/mauibeats/public_html/wp-includes/theme-compat/footer-embed.php on line 18
 [02-Oct-2016 15:13:33 America/Chicago] PHP Fatal error:  Call to undefined function _deprecated_file() in /home3/mauibeats/public_html/wp-includes/theme-compat/footer.php on line 9
+[07-Feb-2018 10:27:37 America/Chicago] PHP Fatal error:  Call to undefined function post_class() in /home3/mauibeats/public_html/wp-includes/theme-compat/embed-content.php on line 13
+[11-Feb-2018 08:47:32 America/Chicago] PHP Fatal error:  Call to undefined function post_class() in /home3/mauibeats/public_html/wp-includes/theme-compat/embed-content.php on line 13
+[11-Feb-2018 08:47:42 America/Chicago] PHP Fatal error:  Call to undefined function post_class() in /home3/mauibeats/public_html/wp-includes/theme-compat/embed-content.php on line 13

@@ -1,0 +1,2 @@
+[07-Feb-2018 04:26:32 America/Chicago] PHP Fatal error:  Class 'getid3_handler' not found in /home3/mauibeats/public_html/wp-includes/ID3/module.audio.ac3.php on line 19
+[07-Feb-2018 04:26:38 America/Chicago] PHP Fatal error:  Class 'getid3_handler' not found in /home3/mauibeats/public_html/wp-includes/ID3/module.audio.ac3.php on line 19

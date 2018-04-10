@@ -1,9 +1,0 @@
-[19-Apr-2017 18:02:05 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home3/mauibeats/public_html/wp-content/plugins/hello.php on line 60
-[09-May-2017 11:31:14 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home3/mauibeats/public_html/wp-content/plugins/hello.php on line 60
-[25-May-2017 16:30:12 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home3/mauibeats/public_html/wp-content/plugins/hello.php on line 60
-[27-Sep-2017 02:44:19 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home3/mauibeats/public_html/wp-content/plugins/hello.php on line 60
-[06-Nov-2017 01:11:18 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home3/mauibeats/public_html/wp-content/plugins/hello.php on line 60
-[16-Nov-2017 05:40:32 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home3/mauibeats/public_html/wp-content/plugins/hello.php on line 60
-[28-Nov-2017 00:52:04 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home3/mauibeats/public_html/wp-content/plugins/hello.php on line 60
-[28-Nov-2017 00:52:06 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home3/mauibeats/public_html/wp-content/plugins/hello.php on line 60
-[28-Nov-2017 08:49:54 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home3/mauibeats/public_html/wp-content/plugins/hello.php on line 60
