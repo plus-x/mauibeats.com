@@ -1,3 +1,5 @@
-wp-content/ai1wm-backups/*
-wp-content/aiowps_backups/*
-wp-content/cache/*
+wp-content/plugins
+wp-content/cache
+wp-content/*backup*
+wp-contnt/managewp
+wp-content/mu-plugins
