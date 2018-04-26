@@ -1066,3 +1066,47 @@
 {"event":"details","time":1524679224,"u":"57","run":"1.19","mem":"37.92","data":"Not calling spawn_cron()."}
 {"event":"details","time":1524679224,"u":"57","run":"1.19","mem":"37.92","data":"About to run next step (post_backup expected). If the backup does not proceed within 15 seconds then something is interfering with the WordPress CRON system such as: server loopback issues, caching plugins, scheduling plugins, another plugin using all available cron time, or another BackupBuddy process in progress (file transfers, other backups, Stash Live backup) taking up all cron time. Try disabling other plugins to see if it resolves issue.  Check the Server Information page cron section to see if the next BackupBuddy step is scheduled to run. Enable \"Classic\" backup mode on the \"Settings\" page to rule out non-cron issues. Additionally you may verify no other backup processes are trying to run at the same time by verifying there is not an existing backup process listed in the cron hogging the cron process."}
 {"event":"details","time":1524679224,"u":"57","run":"1.19","mem":"37.92","data":"Completed step function `integrity_check`."}
+{"event":"details","time":1524683537,"u":"24","run":"0.35","mem":"36.09","data":"--- New PHP process."}
+{"event":"details","time":1524683537,"u":"24","run":"0.35","mem":"36.09","data":"Checking max PHP execution time settings."}
+{"event":"details","time":1524683537,"u":"24","run":"0.35","mem":"36.09","data":"Skipped attempting to override max PHP execution time based on settings."}
+{"event":"details","time":1524683537,"u":"24","run":"0.35","mem":"36.09","data":"Reported PHP execution time - Configured: 30; Original: 30; Current: 30"}
+{"event":"details","time":1524683537,"u":"24","run":"0.35","mem":"36.09","data":"Attempted to set PHP memory limit to user defined WP_MAX_MEMORY_LIMIT (256M) or over-ridden value"}
+{"event":"details","time":1524683537,"u":"24","run":"0.35","mem":"36.09","data":"Reported PHP memory limits - Configured: 256M; Original: 256M; Current: 256M"}
+{"event":"message","time":1524683537,"u":"24","run":"0.35","mem":"36.09","data":"Running process for serial `07p5xq0bae`..."}
+{"event":"details","time":1524683537,"u":"30","run":"0.40","mem":"37.77","data":"About to load fileoptions data for serial `07p5xq0bae`."}
+{"event":"details","time":1524683537,"u":"30","run":"0.41","mem":"37.85","data":"Fileoptions instance #39."}
+{"event":"details","time":1524683537,"u":"30","run":"0.41","mem":"37.85","data":"Created fileoptions lock file `07p5xq0bae.txt.lock` with ID: 5ae15fb149c792.16116194."}
+{"event":"details","time":1524683537,"u":"30","run":"0.41","mem":"37.90","data":"Fileoptions load using 0.04 MB of memory."}
+{"event":"details","time":1524683537,"u":"30","run":"0.41","mem":"37.90","data":"Fileoptions data loaded."}
+{"event":"finishAction","time":1524683537,"u":"30","run":"0.41","mem":"37.90","data":"cronPass"}
+{"event":"details","time":1524683537,"u":"30","run":"0.41","mem":"37.92","data":"Fileoptions `07p5xq0bae.txt` saved. 10384 bytes written."}
+{"event":"details","time":1524683537,"u":"30","run":"0.41","mem":"37.90","data":"Found next step to run: `post_backup`."}
+{"event":"details","time":1524683537,"u":"30","run":"0.41","mem":"37.90","data":"Peak memory usage: 38.002 MB"}
+{"event":"details","time":1524683537,"u":"30","run":"0.41","mem":"37.90","data":"-----"}
+{"event":"details","time":1524683537,"u":"30","run":"0.41","mem":"37.90","data":"Starting step function `post_backup`. Attempt #1."}
+{"event":"startFunction","time":1524683537,"u":"30","run":"0.41","mem":"37.90","data":"{\"function\":\"post_backup\",\"title\":\"Cleaning up\"}"}
+{"event":"message","time":1524683537,"u":"30","run":"0.41","mem":"37.90","data":"Cleaning up after backup."}
+{"event":"details","time":1524683537,"u":"30","run":"0.41","mem":"37.90","data":"Removing temp data directory."}
+{"event":"details","time":1524683537,"u":"31","run":"0.42","mem":"37.90","data":"Trimming old archives (if needed)."}
+{"event":"details","time":1524683537,"u":"31","run":"0.42","mem":"37.91","data":"Deleting old archive `backup-mauibeats_com-2018_04_18-03_43pm-db-usdzoi0rce.zip` as it exceeds the maximum age limit `7` allowed at `7.1050462963` days."}
+{"event":"details","time":1524683537,"u":"31","run":"0.42","mem":"37.91","data":"Trimmed 1 old archives based on settings archive limits."}
+{"event":"details","time":1524683537,"u":"31","run":"0.42","mem":"37.90","data":"Final ZIP file size: 229 KB"}
+{"event":"archiveSize","time":1524683537,"u":"31","run":"0.42","mem":"37.90","data":"229 KB"}
+{"event":"details","time":1524683537,"u":"31","run":"0.42","mem":"37.90","data":"Updating statistics for last backup completed and number of edits since last backup."}
+{"event":"details","time":1524683537,"u":"32","run":"0.43","mem":"38.15","data":"Cleaning up any old temporary zip directories in: `\/home3\/mauibeats\/public_html\/wp-content\/uploads\/backupbuddy_temp\/`. If no recent backups then the temp directory will also be purged."}
+{"event":"details","time":1524683537,"u":"32","run":"0.43","mem":"38.15","data":"Sending scheduled backup complete email notification."}
+{"event":"details","time":1524683537,"u":"32","run":"0.43","mem":"38.15","data":"Fileoptions instance #37."}
+{"event":"details","time":1524683537,"u":"32","run":"0.43","mem":"38.20","data":"Fileoptions load using 0.04 MB of memory."}
+{"event":"details","time":1524683537,"u":"34","run":"0.45","mem":"38.22","data":"Sending email schedule notification. Subject: `BackupBuddy Scheduled Backup Complete - http:\/\/mauibeats.com`; recipient(s): ``."}
+{"event":"message","time":1524683537,"u":"34","run":"0.45","mem":"38.15","data":"Finished cleaning up."}
+{"event":"archiveInfo","time":1524683537,"u":"34","run":"0.45","mem":"38.16","data":"{\"file\":\"backup-mauibeats_com-2018_04_25-03_34pm-db-07p5xq0bae.zip\",\"url\":\"http:\\\/\\\/mauibeats.com\\\/wp-admin\\\/admin-ajax.php?action=pb_backupbuddy_backupbuddy&function=download_archive&backupbuddy_backup=backup-mauibeats_com-2018_04_25-03_34pm-db-07p5xq0bae.zip\"}"}
+{"event":"details","time":1524683537,"u":"34","run":"0.45","mem":"38.17","data":"Fileoptions `07p5xq0bae.txt` saved. 10440 bytes written."}
+{"event":"details","time":1524683537,"u":"34","run":"0.45","mem":"38.15","data":"Finished function `post_backup`. Peak memory usage: 38.336 MB with BackupBuddy v7.1.5.1"}
+{"event":"finishFunction","time":1524683537,"u":"34","run":"0.45","mem":"38.15","data":"{\"function\":\"post_backup\"}"}
+{"event":"details","time":1524683537,"u":"34","run":"0.45","mem":"38.15","data":"-----"}
+{"event":"details","time":1524683537,"u":"34","run":"0.45","mem":"38.15","data":"No more backup steps remain. Finishing..."}
+{"event":"details","time":1524683537,"u":"34","run":"0.45","mem":"38.17","data":"Fileoptions `07p5xq0bae.txt` saved. 10480 bytes written."}
+{"event":"startFunction","time":1524683537,"u":"34","run":"0.45","mem":"38.15","data":"{\"function\":\"backup_success\",\"title\":\"Backup completed successfully.\"}"}
+{"event":"finishFunction","time":1524683537,"u":"34","run":"0.45","mem":"38.15","data":"{\"function\":\"backup_success\"}"}
+{"event":"details","time":1524683537,"u":"34","run":"0.45","mem":"38.15","data":"Closing & unlocking fileoptions."}
+{"event":"details","time":1524683537,"u":"35","run":"0.45","mem":"38.16","data":"Completed step function `post_backup`."}
