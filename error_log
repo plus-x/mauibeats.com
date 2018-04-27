@@ -4039,3 +4039,4 @@
 [23-Apr-2018 08:08:34 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 228589569 bytes) in /home3/mauibeats/public_html/wp-content/plugins/backupbuddy/classes/core.php on line 3350
 [24-Apr-2018 08:06:08 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home3/mauibeats/public_html/wp-content/plugins/backupbuddy/classes/core.php on line 3280
 [24-Apr-2018 20:56:52 UTC] PHP Warning:  trim() expects parameter 1 to be string, array given in /home3/mauibeats/public_html/wp-includes/class-wp-query.php on line 736
+[26-Apr-2018 21:28:42 UTC] PHP Warning:  trim() expects parameter 1 to be string, array given in /home3/mauibeats/public_html/wp-includes/class-wp-query.php on line 736
