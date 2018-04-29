@@ -1,0 +1,3 @@
+CREATE TABLE `wp_et_social_stats` (  `id` mediumint(9) NOT NULL AUTO_INCREMENT,  `sharing_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',  `network` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,  `action` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,  `post_id` bigint(20) NOT NULL,  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,  `media_url` varchar(2083) COLLATE utf8mb4_unicode_ci NOT NULL,  `location` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,  UNIQUE KEY `id` (`id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40000 ALTER TABLE `wp_et_social_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wp_et_social_stats` ENABLE KEYS */;
