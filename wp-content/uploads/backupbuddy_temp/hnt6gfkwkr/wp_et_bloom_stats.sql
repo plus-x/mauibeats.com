@@ -1,3 +1,0 @@
-CREATE TABLE `wp_et_bloom_stats` (  `id` mediumint(9) NOT NULL AUTO_INCREMENT,  `record_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',  `record_type` varchar(3) COLLATE utf8mb4_unicode_ci NOT NULL,  `optin_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,  `list_id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,  `page_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,  `removed_flag` tinyint(1) NOT NULL,  UNIQUE KEY `id` (`id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40000 ALTER TABLE `wp_et_bloom_stats` DISABLE KEYS */;
-/*!40000 ALTER TABLE `wp_et_bloom_stats` ENABLE KEYS */;
