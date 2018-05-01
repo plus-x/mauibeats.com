@@ -1,0 +1,3 @@
+CREATE TABLE `wp_chanimator` (  `step_id` mediumint(9) NOT NULL AUTO_INCREMENT,  `step_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',  `step_type` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,  `step_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,  `step_data` mediumblob NOT NULL,  `step_theme` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,  `step_context` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,  `step_active_flag` varchar(3) COLLATE utf8mb4_unicode_ci NOT NULL,  UNIQUE KEY `step_id` (`step_id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40000 ALTER TABLE `wp_chanimator` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wp_chanimator` ENABLE KEYS */;
